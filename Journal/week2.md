@@ -53,13 +53,15 @@ dmesg, journalctl, systemctl status
 
 ### Testing Schedule
 
-| Week | Testing Phase | Focus |
-|------|---------------|-------|
-| 3 | Baseline | Initial system performance |
-| 4 | Post-Security | Impact of security controls |
-| 5 | Advanced Security | Impact of additional hardening |
-| 6 | Application Load | Performance under workloads |
-| 6 | Optimization | Post-optimization improvements |
+### Testing Schedule Timeline
+
+![Testing Schedule Timeline](assets/week2/testing-schedule.png)
+
+**Phase Breakdown:**
+- **Week 3 (Baseline):** Establishing initial performance benchmarks before any security controls are applied.
+- **Week 4 (Post-Security):** Measuring the overhead introduced by basic hardening (firewall, SSH config).
+- **Week 5 (Advanced):** Assessing impact of strict controls like SELinux/AppArmor and intrusion detection.
+- **Week 6 (Final Load):** Stress testing the fully hardened system to identify bottlenecks and tuning opportunities.
 
 ---
 
@@ -275,17 +277,18 @@ Attackers attempting to overwhelm the server's resources, making it unavailable 
 ## Learning Reflections
 
 ### What I Learned This Week
-- [Key learning point 1]
-- [Key learning point 2]
-- [Key learning point 3]
+### What I Learned This Week
+- **Baseline Importance:** Learned that effective optimization is impossible without accurate baseline metrics; you cannot improve what you cannot measure.
+- **Defense in Depth:** Understood that security is not a single tool (like a firewall) but a layered approach involving network access, user privileges, and application hardening.
+- **Audit Tools:** Discovered the value of automated audit tools like Lynis for quickly identifying compliance gaps against industry standards.
 
 ### Challenges Encountered
-- [Challenge 1 and solution]
-- [Challenge 2 and solution]
+- **UFW Lockout Risk:** **Challenge:** The risk of locking myself out of the server when enabling the firewall. **Solution:** I meticulously verified the `ufw allow ssh` rule was active *before* running `ufw enable`, and kept an active SSH session open during the process.
+- **SELinux Complexity:** **Challenge:** Understanding the complex labeling system of SELinux/AppArmor. **Solution:** I decided to start with 'complain' or 'audit' mode to log violations without breaking services, allowing me to build policies gradually.
 
 ### Security Insights
-- [Insight about security trade-offs]
-- [Insight about threat modeling]
+- **Usability vs. Security:** I observed a direct trade-off between security and convenience. For example, disabling root login and password authentication makes the system much harder to breach, but also requires more careful management of SSH keys.
+- **Attack Surface Reduction:** The most effective security measure is simply turning off what isn't needed. Disabling unused network services limits the potential entry points for an attacker more effectively than patching alone.
 
 ### Next Steps
 - Begin application selection for performance testing
@@ -296,11 +299,11 @@ Attackers attempting to overwhelm the server's resources, making it unavailable 
 
 ## References
 
-[1] [Reference in IEEE format]
+[1] CISecurity, "CIS Ubuntu Linux 22.04 LTS Benchmark," cisecurity.org, 2024. [Online]. Available: https://www.cisecurity.org/benchmark/ubuntu_linux. [Accessed: Dec. 2025].
 
-[2] [Reference in IEEE format]
+[2] Michael Boelen, "Lynis - Security auditing tool for Linux, macOS, and UNIX-based systems," cisofy.com, 2025. [Online]. Available: https://cisofy.com/lynis/. [Accessed: Dec. 2025].
 
-[3] [Reference in IEEE format]
+[3] NIST, "Guide to General Server Security," SP 800-123, National Institute of Standards and Technology, 2008.
 
 ---
 
