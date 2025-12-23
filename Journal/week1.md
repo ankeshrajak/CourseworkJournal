@@ -39,14 +39,14 @@ This week focuses on planning the operating system deployment and making informe
 | Ease of Use | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
 
 **Justification:**
-- [Explain why you chose this distribution]
-- [Discuss the advantages for this coursework]
-- [Mention any trade-offs considered]
+- **Industry Standard:** Ubuntu Server is widely deployed in enterprise environments, making it a relevant choice for gaining improved employability skills.
+- **Documentation & Support:** The extensive community documentation and "Ask Ubuntu" forums provide excellent troubleshooting resources for learning.
+- **Hardware Compatibility:** Excellent driver support ensures smooth operation within the VirtualBox environment without complex configuration.
 
 **Key Features:**
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+- **Long Term Support (LTS):** The 24.04 LTS release guarantees 5 years of security updates, ensuring system stability throughout the coursework.
+- **Package Management:** The APT ecosystem offers a vast repository of pre-compiled binaries, simplifying the installation of monitoring tools and services.
+- **Security Integration:** Native support for AppArmor and UFW allows for immediate implementation of mandatory access controls and firewall rules.
 
 ---
 
