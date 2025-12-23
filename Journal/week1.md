@@ -14,29 +14,12 @@ This week focuses on planning the operating system deployment and making informe
 
 ### Dual-System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    VirtualBox Host Network                   │
-│                                                               │
-│  ┌──────────────────────┐         ┌──────────────────────┐  │
-│  │   Workstation VM     │         │    Server VM         │  │
-│  │  (Linux Desktop)     │   SSH   │  (Ubuntu Server)     │  │
-│  │                      │────────▶│   Headless           │  │
-│  │  - SSH Client        │         │   - No GUI           │  │
-│  │  - Monitoring Tools  │         │   - SSH Server       │  │
-│  │  - Terminal          │         │   - Firewall (UFW)   │  │
-│  └──────────────────────┘         └──────────────────────┘  │
-│         IP: [IP]                        IP: [IP]             │
-└─────────────────────────────────────────────────────────────┘
-```
+![System Architecture Diagram](assets/week1/architecture-diagram.png)
 
 **Architecture Description:**
-- [Add your description of the architecture here]
-- [Explain the network topology]
-- [Describe the communication flow]
-
-**Diagram Image:**
-![System Architecture Diagram](assets/week1/architecture-diagram.png)
+- **Workstation VM:** A Linux Desktop environment acting as the administrative console. It hosts SSH clients, monitoring tools, and terminal emulators.
+- **Server VM:** A headless Ubuntu Server handling the core workloads. It is secured with UFW and accessible only via SSH.
+- **Connection:** A dedicated SSH tunnel connects the workstation to the server within the virtual network.
 
 ---
 
