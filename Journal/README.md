@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Operating Systems Coursework - Technical Journal
 
 This repository contains the technical journal for the CMPN202 Operating Systems coursework, documenting a comprehensive Linux server administration project.
@@ -139,6 +138,3 @@ For GitHub Pages deployment:
 ---
 
 **Note:** This is a template structure. Fill in the placeholder content with your actual implementation details, screenshots, and data as you complete each phase of the coursework.
-=======
-# CourseworkJournal
->>>>>>> 663cff3d3154637aefa00d20c653784df0fe9aa9
