@@ -1,4 +1,4 @@
-# Week 1: System Planning and Distribution Selection
+up# Week 1: System Planning and Distribution Selection
 
 **Phase 1** | [← Back to Index](index.md) | [Week 2 →](week2.md)
 
@@ -59,17 +59,17 @@ This week focuses on planning the operating system deployment and making informe
 - **Option B:** Host machine with SSH client
 - **Option C:** Hybrid approach
 
-**My Choice:** [Your choice]
+**My Choice:** Option A: Linux Desktop VM
 
 **Justification:**
-- [Reason 1]
-- [Reason 2]
-- [Reason 3]
+- **Realistic Network Simulation:** Simulating a separate workstation creates a realistic "air-gapped" administration scenario, mimicking enterprise jump-host architectures.
+- **Tool Availability:** Using a full Linux Desktop (e.g., Ubuntu Desktop or Linux Mint) provides native access to GUI-based tools (like Wireshark or browser-based dashboards) that might be cumbersome to run on a headless server.
+- **Isolation:** Keeps the administration environment separate from the host OS, preventing accidental changes to the host and allowing for easy snapshot recovery.
 
 **Configuration Details:**
-- Operating System: [OS name and version]
-- SSH Client: [Client software]
-- Additional Tools: [List monitoring and admin tools]
+- Operating System: Ubuntu Desktop 24.04 LTS
+- SSH Client: OpenSSH Client (Standard)
+- Additional Tools: Wireshark, Remmina, VS Code
 
 ---
 
@@ -98,9 +98,9 @@ Workstation VM:
 ![Network Configuration](assets/week1/network-diagram.png)
 
 **Configuration Steps:**
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1.  **Network Setup:** Configured VirtualBox "NAT Network" (10.0.2.0/24) to allow internal communication between the Server and Workstation while enabling internet access.
+2.  **Server Installation:** Installed Ubuntu Server 24.04, selecting "No" for GUI and partitioning the disk with LVM for future flexibility.
+3.  **SSH Enabling:** Installed `openssh-server` during the installation wizard and verified service status post-boot with `systemctl status ssh`.
 
 **Connectivity Testing:**
 ```bash
@@ -158,13 +158,13 @@ Filesystem      Size  Used Avail Use% Mounted on
 ## Learning Reflections
 
 ### What I Learned This Week
-- [Key learning point 1]
-- [Key learning point 2]
-- [Key learning point 3]
+- **Virtual Network Management:** Gained practical experience in configuring VirtualBox NAT Networks to create isolated subnets for secure inter-VM communication.
+- **Headless Administration:** Developed comfort with managing a server solely through the command line (CLI) without relying on graphical interfaces.
+- **SSH Key Management:** Understood the importance of generating and securing SSH keys for authentication instead of relying on password-based logins.
 
 ### Challenges Encountered
-- [Challenge 1 and how you addressed it]
-- [Challenge 2 and how you addressed it]
+- **Permission Denied (publickey):** Encountered initial connection refusals when setting up keys. Addressed this by correcting file permissions on the private key (`chmod 600 id_rsa`).
+- **Network Isolation Issues:** Initially, the VMs could not ping each other. Addressed this by ensuring both were attached to the exact same "NAT Network" adapter name in VirtualBox settings.
 
 ### Next Steps
 - Prepare for Phase 2: Security Planning and Testing Methodology
@@ -175,9 +175,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 ## References
 
-[1] [Reference in IEEE format]
+[1] Canonical Ltd., "Ubuntu Server Documentation," ubuntu.com, 2025. [Online]. Available: https://ubuntu.com/server/docs. [Accessed: Dec. 2025].
 
-[2] [Reference in IEEE format]
+[2] Oracle Corporation, "Oracle VM VirtualBox User Manual," virtualbox.org, 2025. [Online]. Available: https://www.virtualbox.org/manual/. [Accessed: Dec. 2025].
 
 ---
 
