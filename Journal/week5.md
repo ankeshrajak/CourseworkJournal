@@ -12,12 +12,12 @@ This week focuses on implementing advanced security controls and developing comp
 
 ## 1. Access Control Implementation
 
-### Selected MAC System: [SELinux / AppArmor]
+### Selected MAC System: AppArmor
 
 **Justification for Selection:**
-- [Reason 1]
-- [Reason 2]
-- [Reason 3]
+1.  **Ease of Use:** AppArmor uses path-based profiles which are inherently easier to read and troubleshoot compared to SELinux's complex inode labeling system.
+2.  **Ubuntu Integration:** It is the default Mandatory Access Control system for Ubuntu/Debian, ensuring better compatibility and pre-installed profiles for common services.
+3.  **Audit Mode:** The "Complain Mode" allows us to develop and test profiles non-destructively, logging violations without breaking application functionality during the learning phase.
 
 ---
 
@@ -679,17 +679,18 @@ timestamp,cpu_usage,mem_total_mb,mem_used_mb,mem_free_mb,mem_percent,disk_total_
 ## Learning Reflections
 
 ### What I Learned This Week
-- [Key learning about advanced security]
-- [Key learning about automation]
-- [Key learning about monitoring]
+*   **Advanced Security:** "Defense in Depth" is practical, not just theoretical; layering Fail2ban (intrusion detection) over UFW (network filtering) over AppArmor (application confinement) creates a robust security posture.
+*   **Automation:** Tools like `unattended-upgrades` are critical for closing the "patch gap"—the window of vulnerability between a patch release and its application.
+*   **Monitoring:** Collecting raw metrics is only step one; the real value comes from establishing a baseline (standard behavior) so that anomalies (security incidents or performance leaks) stand out.
 
 ### Challenges Encountered
-- [Challenge 1 and solution]
-- [Challenge 2 and solution]
+1.  **Data Consistency:** Initial manual monitoring resulted in irregular timestamps, making it hard to correlate CPU spikes with logs.
+    *   **Solution 1:** Standardized the polling interval to exactly 5 seconds.
+    *   **Solution 2:** Wrote `monitor-server.sh` to mechanically enforce this consistency and output structured CSV data.
 
 ### Scripting Insights
-- [Insight about bash scripting]
-- [Insight about remote monitoring]
+*   **Bash Scripting:** Using exit codes (`exit 0` vs `exit 1`) and conditional formatting (colors) drastically improves the operator experience, making pass/fail states immediately obvious.
+*   **Remote Monitoring:** SSH is a powerful transport for telemetry; executing `ssh user@host 'command'` allows for agentless monitoring without installing heavy software on the target.
 
 ### Next Steps
 - Begin Phase 6: Performance Evaluation
@@ -702,11 +703,9 @@ timestamp,cpu_usage,mem_total_mb,mem_used_mb,mem_free_mb,mem_percent,disk_total_
 
 ## References
 
-[1] [Reference in IEEE format]
-
-[2] [Reference in IEEE format]
-
-[3] [Reference in IEEE format]
+[1] Canonical Ltd., "AppArmor," ubuntu.com. [Online]. Available: https://ubuntu.com/server/docs/security-apparmor
+[2] Fail2ban Contributors, "Fail2ban Manual," fail2ban.org. [Online]. Available: https://www.fail2ban.org/wiki/index.php/MANUAL_0_8
+[3] B. Beyer et al., "Site Reliability Engineering," O'Reilly Media, 2016. [Online]. Available: https://sre.google/sre-book/monitoring-distributed-systems/
 
 ---
 
