@@ -429,17 +429,17 @@ Connection timed out
 ## Learning Reflections
 
 ### What I Learned This Week
-- [Key learning about SSH security]
-- [Key learning about firewall configuration]
-- [Key learning about user management]
+1.  **Principle of Least Privilege:** Creating a dedicated `adminuser` with limited sudo scope drastically reduces the attack surface compared to using the root account directly.
+2.  **SSH Hardening:** Disabling password authentication and root login effectively neutralizes brute-force password attacks, shifting reliance to cryptographic key strength.
+3.  **Firewall Specificity:** Configuring UFW to allow connections specifically from my workstation IP (rather than `any`) adds a critical layer of network access control.
 
 ### Challenges Encountered
-- [Challenge 1 and how you solved it]
-- [Challenge 2 and how you solved it]
+1.  **SSH Key Permissions:** Encountered a "WARNING: UNPROTECTED PRIVATE KEY FILE" error. solved it by strictly setting file permissions to `600` (`chmod 600 id_ed25519`) to ensure only the owner can read it.
+2.  **Firewall Lockout Risk:** The risk of locking myself out when enabling UFW was high. I mitigated this by explicitly allowing SSH traffic `sudo ufw allow 22` *before* enabling the firewall service.
 
 ### Security Implementation Insights
-- [Insight about security vs usability trade-offs]
-- [Insight about defense in depth]
+1.  **Security vs. Usability:** There is a tangible trade-off; using SSH keys and distinct users is less convenient than a direct root login with a password, but the security gains (non-repudiation, brute-force resistance) justify the extra steps.
+2.  **Defense in Depth:** No single control is sufficient. The combination of Network Security (Firewall), Transport Security (SSH Hardening), and Identity Security (User Privileges) creates a resilient system where one failure doesn't compromise the whole.
 
 ### Next Steps
 - Implement advanced security controls (SELinux/AppArmor)
@@ -452,11 +452,9 @@ Connection timed out
 
 ## References
 
-[1] [Reference in IEEE format]
-
-[2] [Reference in IEEE format]
-
-[3] [Reference in IEEE format]
+1.  OpenBSD Project, "OpenSSH Manual Pages," openssh.com. [Online]. Available: https://www.openssh.com/manual.html
+2.  Canonical Ltd., "UFW - Uncomplicated Firewall," ubuntu.com. [Online]. Available: https://ubuntu.com/server/docs/security-firewall
+3.  K. Scarfone et al., "Guide to General Server Security," NIST Special Publication 800-123, 2008. [Online]. Available: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf
 
 ---
 
