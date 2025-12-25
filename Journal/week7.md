@@ -464,19 +464,19 @@ adminuser@server:~$ systemctl list-unit-files --type=service --state=disabled
 
 ### Security Posture Summary
 
-**Overall Security Rating:** [Excellent/Good/Fair/Poor]
+**Overall Security Rating:** Excellent
 
 **Strengths:**
-- ✅ [Strength 1]
-- ✅ [Strength 2]
-- ✅ [Strength 3]
-- ✅ [Strength 4]
-- ✅ [Strength 5]
+✅ **Automated Patch Management:** Unattended upgrades minimize the vulnerability window.
+✅ **Robust Access Control:** SSH Keys + AppArmor provide strong defense against unauthorized access.
+✅ **Defense in Depth:** Multiple layers (Firewall, Fail2ban, Permissions) protect the core.
+✅ **Minimal Attack Surface:** Only SSH port is exposed, and unnecessary services are routed.
+✅ **Verification:** Continuous monitoring and auditing confirm control effectiveness.
 
 **Areas for Improvement:**
-- ⚠️ [Area 1]
-- ⚠️ [Area 2]
-- ⚠️ [Area 3]
+⚠️ **Intrusion Prevention:** Currently relying on Fail2ban (Reactive); could implement Snort/Suricata.
+⚠️ **Centralized Logging:** Logs are local; a remote syslog server would prevent tampering evidence loss.
+⚠️ **Multi-Factor Authentication:** SSH keys are strong, but MFA (Google Authenticator) would add another layer.
 
 ### Performance vs Security Trade-offs
 
