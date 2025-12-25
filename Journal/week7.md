@@ -608,17 +608,17 @@ adminuser@server:~$ systemctl list-unit-files --type=service --state=disabled
 ## Appendices
 
 ### Appendix A: Complete Configuration Files
-- [SSH Config (sshd_config)](../config/sshd_config)
-- [UFW Rules](../config/ufw_rules)
-- [Security Scripts](../scripts/)
+* SSH Config (sshd_config)
+* UFW Rules
+* Security Scripts
 
 ### Appendix B: Performance Data
-- [Raw CSV Data](../data/performance_metrics.csv)
-- [Monitoring Logs](../logs/monitoring.log)
+* Raw CSV Data
+* Monitoring Logs
 
 ### Appendix C: Security Scan Reports
-- [Full Lynis Report](../reports/lynis_report.dat)
-- [Nmap Scan Results](../reports/nmap_scan.txt)
+* Full Lynis Report
+* Nmap Scan Results
 
 ---
 
