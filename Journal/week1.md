@@ -151,7 +151,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 ```
 
 **Screenshot:**
-![CLI System Specifications](assets/week1/system-specs.png)
+![CLI System Specifications](assets/week1/cli_specs.png)
 
 ---
 
