@@ -245,7 +245,8 @@ graph TD
 `timestamp,application,cpu_percent,memory_mb,disk_read_mb,disk_write_mb,network_rx_mb,network_tx_mb`
 
 ### Monitoring Dashboard
-![Monitoring Dashboard](assets/week3/monitoring-dashboard.png)
+![Monitoring Dashboard 1](assets/week3/monitoring-dashboard.png)
+![Monitoring Dashboard 2](assets/week3/monitoring-dashboard-2.png)
 
 ---
 
