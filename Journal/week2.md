@@ -307,7 +307,6 @@ Attackers attempting to overwhelm the server's resources, making it unavailable 
 
 ---
 
-**Week 2 Completion Date:** [Date]  
-**Time Spent:** [Hours]
+
 
 [← Week 1](week1.md) | [Back to Index](index.md) | [Week 3 →](week3.md)

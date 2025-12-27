@@ -458,7 +458,6 @@ Connection timed out
 
 ---
 
-**Week 4 Completion Date:** [Date]  
-**Time Spent:** [Hours]
+
 
 [← Week 3](week3.md) | [Back to Index](index.md) | [Week 5 →](week5.md)

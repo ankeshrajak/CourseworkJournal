@@ -709,7 +709,6 @@ timestamp,cpu_usage,mem_total_mb,mem_used_mb,mem_free_mb,mem_percent,disk_total_
 
 ---
 
-**Week 5 Completion Date:** [Date]  
-**Time Spent:** [Hours]
+
 
 [← Week 4](week4.md) | [Back to Index](index.md) | [Week 6 →](week6.md)

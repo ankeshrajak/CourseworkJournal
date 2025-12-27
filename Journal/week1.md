@@ -181,7 +181,6 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 ---
 
-**Week 1 Completion Date:** [Date]  
-**Time Spent:** [Hours]
+
 
 [← Back to Index](index.md) | [Week 2 →](week2.md)

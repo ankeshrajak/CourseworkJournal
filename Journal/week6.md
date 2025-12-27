@@ -576,7 +576,6 @@ xychart-beta
 
 ---
 
-**Week 6 Completion Date:** [Date]  
-**Time Spent:** [Hours]
+
 
 [← Week 5](week5.md) | [Back to Index](index.md) | [Week 7 →](week7.md)
